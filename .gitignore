@@ -1,0 +1,61 @@
+# Built application & package files
+*.apk
+*.aar
+*.ap_
+*.aab
+
+# Dalvik / ART bytecode & Java binaries
+*.dex
+*.class
+
+# Build & generated directories
+bin/
+gen/
+out/
+build/
+app/build/
+*/build/
+.gradle/
+.kotlin/
+
+# Local Android SDK configuration
+local.properties
+
+# Proguard / R8 mapping & outputs
+proguard/
+
+# Log & trace files
+*.log
+
+# Android Studio & IntelliJ IDEA project files
+*.iml
+.idea/
+
+# Keystore & cryptographic signature files
+*.jks
+*.keystore
+signing.properties
+
+# OS-specific files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+[Dd]esktop.ini
+
+# Android Profiler & memory dumps
+captures/
+*.hprof
+
+# Native C/C++ builds (NDK/CMake)
+.cxx/
+.externalNativeBuild/
+
+# Agent & workflow caches
+.claude-flow/
+.swarm/
+*.tmp
+*.bak
