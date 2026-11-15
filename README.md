@@ -1,7 +1,7 @@
 <div align="center">
   <h1>❄️ AC Remote by Iori Studios</h1>
-  <p><b>A modern, high-performance infrared AC remote built natively for Android.</b></p>
-  <p><i>Zero ads. Zero bloat. 100% offline hardware control.</i></p>
+  <p><b>A native, offline infrared remote control for Videocon Air Conditioners.</b></p>
+  <p><i>Zero ads. Zero internet. 100% direct hardware control.</i></p>
 
   <p>
     <a href="https://github.com/h-iori/AC_remote/releases/latest">
@@ -9,7 +9,6 @@
     </a>
     <img src="https://img.shields.io/badge/Platform-Android_IR_Blaster-0A84FF?style=flat-square" alt="Platform" />
     <img src="https://img.shields.io/badge/Kotlin-2.3.20-7F52FF?style=flat-square" alt="Kotlin" />
-    <img src="https://img.shields.io/badge/UI-Jetpack_Compose-4285F4?style=flat-square" alt="Jetpack Compose" />
   </p>
 </div>
 
@@ -19,54 +18,47 @@
 
 *“If my phone already has the hardware, why am I still hunting for AAA batteries?”*
 
-I was completely frustrated with constantly changing batteries in my physical AC remote—especially when they died in the middle of the night. My phone has a built-in Infrared (IR) Blaster, yet most remote apps on the Play Store are bloated with intrusive pop-up ads, subscription walls, and unnecessary cloud trackers.
+I was frustrated with constantly replacing dead batteries in my AC remote—especially when they ran out unexpectedly. Since my phone already has a built-in Infrared (IR) Blaster, I decided to build a standalone native remote rather than dealing with physical batteries or ad-riddled Play Store apps.
 
-So, I decided to build my own.
-
-**AC Remote** speaks directly to the air conditioner through native infrared pulses. No internet connection, no Bluetooth, no accounts, and no third-party telemetry—just pure, instant climate control directly from the device that's already in my hand.
+**AC Remote** sends raw, protocol-accurate infrared commands directly to the air conditioner. It requires no internet, no Wi-Fi, no Bluetooth, and no third-party accounts.
 
 ---
 
-## 🚀 Features
+## ⚡ Remote Features
 
-- **Direct IR Blaster Engine:** Uses Android's native `ConsumerIrManager` to transmit verified 38 kHz Kelvinator/YB1FA frames (280 alternating microsecond pulses).
-- **Sticky Power Bar:** Prominent Power ON/OFF toggle pinned permanently to the top app bar for instant, zero-scroll access.
-- **Glassmorphism UI:** Pure Jetpack Compose interface with dynamic ambient lighting that reacts in real-time to the active mode (Cool Blue, Heat Amber, Dry Teal, Fan Purple, Auto Green).
-- **Tactile Temperature Dial:** Interactive touch & drag circular dial (16°C – 30°C) alongside discrete tactile `−` and `+` step buttons.
-- **5-Stage Fan Stepper:** Quick toggling between Auto, Low, Medium, High, and Turbo airflow.
-- **Full Airflow & Swing Control:** Dedicated bottom sheet for vertical louver angles and horizontal sweep.
-- **Smart Comfort Presets:** Instant one-tap modes: *Cool Freeze*, *Eco Night*, and *Gentle Breeze*.
-- **Edge-to-Edge Adaptive Layout:** Perfectly accommodates punch-hole camera cutouts, system status bars, and Android gesture navigation bars without overlap.
-- **Persistent State:** Uses Android DataStore Preferences to save and restore your exact temperature, fan, and swing settings across app launches.
+- **Direct IR Blaster Transmission:** Encodes and transmits the 280-pulse, 38 kHz Kelvinator/YB1FA infrared protocol via Android's native `ConsumerIrManager`.
+- **Power Control:** Instant power ON / OFF toggle.
+- **Precision Temperature Control:** Set temperature between 16°C and 30°C in 1°C increments.
+- **5 Operating Modes:** Complete support for **Cool**, **Heat**, **Dry (Dehumidify)**, **Fan Only**, and **Auto**.
+- **5-Stage Fan Speeds:** Select between **Auto**, **Low**, **Medium**, **High**, and **Turbo** airflow.
+- **Dual-Axis Louver & Swing Control:** Full vertical louver angle adjustment (auto-swing, fixed ceiling, high, mid, low) and horizontal sweep toggling.
+- **Auxiliary AC Functions:**
+  - **Turbo:** Maximum cooling/heating output.
+  - **X-Fan / Blow:** Keeps indoor fan running after shutoff to dry coils and prevent mildew.
+  - **Light:** Turns the AC indoor unit LED temperature display ON or OFF.
+  - **Quiet:** Ultra-low fan speed for silent nighttime operation.
+  - **Sleep:** Automatically adjusts temperature curve for overnight comfort.
+  - **Timer:** Configurable countdown timer for automatic shutoff.
+- **Quick Comfort Presets:** Instant one-tap profiles (*Cool Freeze*, *Eco Night*, *Gentle Breeze*).
+- **Persistent State Memory:** Automatically saves your last-used settings locally so your remote is ready the moment you open it.
 
 ---
 
 ## ❄️ Target Hardware
 
-- **AC Brand:** Videocon
+- **AC Manufacturer:** Videocon
 - **Series:** Vita Air
 - **Model:** `VBS53.CVL1-CR`
-- **Original Remote:** `YB1FA`
-- **Protocol:** Kelvinator 16-byte state, 38 kHz carrier frequency, checksum-validated.
-
----
-
-## 🛠️ Tech Stack
-
-- **Language:** Kotlin
-- **UI:** Jetpack Compose + Material 3
-- **Architecture:** Clean MVVM with Unidirectional Data Flow (StateFlow)
-- **Asynchronous Pipeline:** Kotlin Coroutines & Mutex-guarded IR transmission queue
-- **Hardware Driver:** Android `ConsumerIrManager`
-- **Persistence:** Jetpack DataStore Preferences
+- **Original Remote Model:** `YB1FA`
+- **Protocol:** Kelvinator (16-byte state, 38 kHz carrier frequency, checksum validated)
 
 ---
 
 ## 📲 Download & Installation
 
-1. Grab the latest APK from [GitHub Releases](https://github.com/h-iori/AC_remote/releases/latest).
-2. Install `AC-Remote-v2.0.0.apk` directly onto any Android device with an integrated IR blaster (Xiaomi, Redmi, POCO, Vivo, Huawei, etc.).
-3. Point your phone at the AC and enjoy.
+1. Download the latest `AC-Remote-v2.0.0.apk` from [GitHub Releases](https://github.com/h-iori/AC_remote/releases/latest).
+2. Install the APK on any Android phone equipped with an infrared emitter (Xiaomi, Redmi, POCO, Vivo, Huawei, etc.).
+3. Point your device at the AC unit and control it immediately.
 
 ---
 
